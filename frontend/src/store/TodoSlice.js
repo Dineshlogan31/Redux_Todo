@@ -4,7 +4,7 @@ import {createSlice,createAsyncThunk} from "@reduxjs/toolkit"
 export const addTodo=createAsyncThunk(
     "todo/addTodo",
     async (payload)=>{
-        const response=await fetch("http://localhost:5000/addTodo",{
+        const response=await fetch("https://task-8x40.onrender.com/addTodo",{
             method:"POST",
             headers:{
                 'Content-Type':"application/json"
@@ -25,7 +25,7 @@ export const addTodo=createAsyncThunk(
 export const getAllTodos=createAsyncThunk(
     "todos/getAllTodos",
     async ()=>{
-       const response=await fetch("http://localhost:5000/getAllTodos")
+       const response=await fetch("https://task-8x40.onrender.com/getAllTodos")
        if(response.ok)
        {
        const todos=await response.json()
@@ -39,7 +39,7 @@ export const toggleCompleted=createAsyncThunk(
     "todo/toggleCompleted",
     async (payload)=>{
         console.log(payload);
-        const response=await fetch(`http://localhost:5000/toggleCompleted/${payload.id}`,{
+        const response=await fetch(`https://task-8x40.onrender.com/toggleCompleted/${payload.id}`,{
             method:"PATCH",
             headers:{
                 'Content-Type':"application/json"
@@ -59,7 +59,7 @@ export const toggleCompleted=createAsyncThunk(
 export const deleteTodo=createAsyncThunk(
     "todo/deleteTodo",
     async (payload)=>{
-        const response=await fetch(`http://localhost:5000/deleteTodo/${payload.id}`,{
+        const response=await fetch(`https://task-8x40.onrender.com/deleteTodo/${payload.id}`,{
             method:"DELETE",
         })
         if(response.ok)

@@ -11,7 +11,7 @@ const TodoList = () => {
    dispatch(
     getAllTodos()
    )
-  },[dispatch,todos])
+  },[dispatch])
   return (
     <ul>
     {
